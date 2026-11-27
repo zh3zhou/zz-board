@@ -1,0 +1,19 @@
+.project-timeline { min-width: 0; overflow-wrap: anywhere; padding-bottom: 16px; }
+.timeline-heading, .milestone-card > header { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+.milestone-card { margin: 12px 0; padding: 14px 16px; border: 1px solid var(--hairline); border-left: 2px solid var(--hairline); border-radius: 12px; background: var(--panel-elevated, var(--panel)); color: var(--ink); }
+.milestone-card.has-update { border-left-color: var(--accent); }
+.milestone-card > header, .timeline-muted { color: var(--muted); font-size: 11px; line-height: 1.7; }
+.milestone-card h4 { margin: 9px 0 12px; font-size: 15px; line-height: 1.6; }
+.milestone-stage + .milestone-stage { margin-top: 14px; padding-top: 10px; border-top: 1px solid var(--hairline); }
+.milestone-stage h5 { color: var(--accent); margin: 8px 0; font-size: 12px; }
+.milestone-stage p { margin: 7px 0; line-height: 1.75; font-size: 13px; white-space: pre-wrap; }
+.milestone-stage b { display: block; color: var(--muted); font-size: 10px; font-weight: 500; }
+.milestone-stage details { font-size: 12px; line-height: 1.7; }
+.milestone-evidence { margin-top: 10px; color: var(--muted); }
+.milestone-evidence code, .milestone-evidence span, .history-backfill small { display: block; font-size: 10px; overflow-wrap: anywhere; }
+.project-timeline button, .auto-check button { background: var(--control-bg); color: var(--control-text); border: 1px solid var(--control-border); border-radius: 8px; padding: 7px 11px; cursor: pointer; }
+.project-timeline button:disabled, .auto-check button:disabled { color: var(--control-muted); background: var(--control-bg); cursor: not-allowed; }
+.history-backfill { margin-top: 18px; font-size: 12px; line-height: 1.7; }
+.auto-check { padding: 14px 0; border-bottom: 1px solid var(--hairline); }
+.auto-check label { display: flex; align-items: center; gap: 8px; }
+.auto-check small { display: block; margin: 6px 0; color: var(--muted); }

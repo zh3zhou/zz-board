@@ -1,0 +1,154 @@
+/* The closed board has no publication frame. Reading typography lives in open panels. */
+.app-shell:has(> .detail-panel.panel-shell, > .control-drawer) > .board-stage {
+  /* Canvas tools should never cover a button in the open menu or inspector. */
+  isolation: isolate;
+}
+.app-shell:has(> .detail-panel.panel-shell) > .zen-handle[aria-expanded=false] {
+  z-index: 1;
+}
+.detail-panel:is(.project-detail-panel, .summary-panel, .settings-panel, .skin-panel, .archive-panel) {
+  --reading-serif: Georgia, "Noto Serif SC", "Songti SC", SimSun, serif;
+  --reading-rule: color-mix(in srgb, var(--ink) 32%, var(--hairline));
+  --reading-margin: clamp(16px, 2vw, 28px);
+}
+.detail-panel:is(.project-detail-panel, .summary-panel, .settings-panel, .skin-panel, .archive-panel) > .panel-fixed-header {
+  padding: 19px var(--reading-margin) 0;
+  border-bottom-color: var(--reading-rule);
+}
+.detail-panel:is(.project-detail-panel, .summary-panel, .settings-panel, .skin-panel, .archive-panel) > .panel-fixed-header h2 {
+  width: auto;
+  margin: 4px 40px 12px 0;
+  font: 600 clamp(23px, 2.2vw, 31px)/1.28 var(--reading-serif);
+  letter-spacing: -.025em;
+  overflow-wrap: anywhere;
+  max-block-size: min(3.84em, 22vh);
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+.detail-panel:is(.project-detail-panel, .summary-panel, .settings-panel, .skin-panel, .archive-panel) > .panel-fixed-header .eyebrow {
+  color: var(--muted);
+  font: inherit;
+  font-size: 11px;
+  letter-spacing: .02em;
+}
+.detail-panel:is(.project-detail-panel, .summary-panel, .settings-panel, .skin-panel, .archive-panel) > .panel-fixed-header .panel-tabs {
+  gap: clamp(9px, 1.4vw, 18px);
+  flex-wrap: wrap;
+}
+.detail-panel:is(.project-detail-panel, .summary-panel, .settings-panel, .skin-panel, .archive-panel) > .panel-fixed-header .panel-tabs button {
+  min-height: 36px;
+  padding-inline: 1px;
+  font-size: 12px;
+}
+.detail-panel:is(.project-detail-panel, .summary-panel, .settings-panel, .skin-panel, .archive-panel) .panel-tabs [aria-current=true] {
+  font-weight: 650;
+}
+.detail-panel:is(.project-detail-panel, .summary-panel, .settings-panel, .skin-panel, .archive-panel) .panel-tabs button[aria-current=true]::after {
+  bottom: 0;
+}
+.detail-panel:is(.project-detail-panel, .summary-panel, .settings-panel, .skin-panel, .archive-panel) > .panel-scroll {
+  padding-inline: var(--reading-margin);
+  overflow-wrap: anywhere;
+}
+.detail-panel:is(.project-detail-panel, .summary-panel, .settings-panel, .skin-panel, .archive-panel) > .panel-fixed-header :focus-visible {
+  outline: 2px solid var(--control-focus);
+  outline-offset: -2px;
+}
+.project-detail-panel .project-recap > section > h3, .project-detail-panel .project-notes > h3, .settings-panel .panel-scroll > section > h3 {
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.6;
+  color: var(--ink);
+  letter-spacing: .035em;
+}
+.project-detail-panel .project-recap > section {
+  padding: 14px 0 18px;
+}
+.project-detail-panel .project-recap > section:first-child { padding-top: 0; border-top: 0; }
+.project-detail-panel .project-stop-point article + article {
+  margin-top: 14px;
+}
+.project-detail-panel .project-recap article > .reading-fact {
+  color: var(--ink);
+  margin: 0 0 4px;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+  white-space: pre-line;
+}
+.project-detail-panel .reading-origin, .project-detail-panel .citation-content, .project-detail-panel .recap-sources {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.65;
+}
+.reading-qualifier { font-weight: 600; }
+.project-detail-panel .citation-toggle {
+  font: inherit;
+  color: inherit;
+  padding: 2px 0;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+.project-detail-panel .citation-toggle:hover { text-decoration: underline; text-underline-offset: 3px; }
+.project-detail-panel .citation-content:not([hidden]) {
+  margin: 7px 0 12px;
+  padding-inline-start: 10px;
+  border-inline-start: 2px solid var(--hairline);
+}
+.project-detail-panel .citation-record + .citation-record { margin-top: 8px; }
+.project-detail-panel .citation-locator { margin-inline-start: 8px; }
+.project-detail-panel .citation-record code, .project-detail-panel .citation-content code {
+  display: block;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+.project-detail-panel .thread-origin-details > small { font: inherit; margin-block: 8px; }
+.project-detail-panel .thread-origin-details > code { user-select: all; }
+.project-detail-panel .reading-origin .recap-thread-link {
+  display: inline;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+.project-detail-panel .project-recap :is(button, summary, a):focus-visible {
+  outline: 2px solid var(--control-focus);
+  outline-offset: 2px;
+}
+.project-detail-panel .project-next-actions article {
+  margin: 8px 0 0;
+  padding: 0;
+  border: 0;
+}
+.project-detail-panel .other-project-actions > article { border-top: 1px solid var(--hairline); padding-top: 10px; }
+.project-detail-panel .project-next-actions .recap-thread-link,
+.project-detail-panel .project-stop-point .recap-thread-link {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.archive-panel .archive-card { min-width: 0; }
+.archive-panel .archive-card > small { font: inherit; font-size: 12px; line-height: 1.6; }
+.archive-panel .archive-card .archive-relation-title { color: var(--ink); font: 600 16px/1.5 var(--reading-serif); }
+.detail-panel.skin-panel .skin-mixer label, .detail-panel.settings-panel .shortcut-row { min-width: 0; }
+.detail-panel.skin-panel .skin-mixer select { width: 100%; }
+@media (max-width: 500px) {
+  .detail-panel.settings-panel .drawing-settings-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .detail-panel.settings-panel .settings-version dd { max-width: 100%; min-width: 0; }
+  .detail-panel.archive-panel .archive-actions { flex-wrap: wrap; }
+}
+@media (max-height: 520px) {
+  .detail-panel:is(.project-detail-panel, .summary-panel, .settings-panel, .skin-panel, .archive-panel) > .panel-fixed-header {
+    padding-top: 8px;
+  }
+  .detail-panel:is(.project-detail-panel, .summary-panel, .settings-panel, .skin-panel, .archive-panel) > .panel-fixed-header h2 {
+    font-size: 22px;
+    margin-block: 3px 6px;
+  }
+}
+@media (forced-colors: active) {
+  .detail-panel .panel-fixed-header .panel-tabs [aria-current=true] { border-block-end: 2px solid Highlight; }
+  .detail-panel .panel-fixed-header :focus-visible { outline-color: Highlight; }
+}

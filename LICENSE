@@ -1,0 +1,154 @@
+ZZ Board Source Available License 1.0
+
+Copyright (c) 2026 李哲舟 (Li Zhezhou)
+
+Approved on 2026-11-28 for the ZZ Board public source release. This license
+applies to the version distributed with this text.
+
+1. Definitions
+
+"Software" means the ZZ Board code, project documentation, and original
+visual assets distributed under this license, including project screenshots,
+icons, built-in Skins, and permitted modifications. Third-party components,
+third-party assets, and user content outside these project materials remain
+subject to their own rights and licenses.
+
+"Licensor" means each copyright holder to the extent that holder has the
+authority to grant the rights stated here. "You" means the person or legal
+entity exercising those rights.
+
+"Corresponding Source" means the preferred form of the Software for making
+modifications, including the modifications, build scripts, dependency
+manifests and lockfiles, and instructions needed to build the distributed
+version. It excludes users' data, credentials, signing keys, proprietary
+development tools, and independently available general-purpose tools.
+
+"Internal Use" means use by You and Your personnel for Your own work,
+including business work, without providing the Software as a product or
+hosted service to external customers.
+
+"Core Charge" means a mandatory payment, subscription, paid membership,
+required donation, or other consideration required to obtain the Software,
+use it, unlock its capabilities, or access a hosted replacement of it. A
+charge for a bundle whose substantial value is access to the Software is a
+Core Charge, regardless of the label used for that charge. Optional
+services that do not condition access to the Software are not Core Charges.
+
+"Replacement Hosting" means operating the Software or a modification for
+external users as a substantially substitutable board, note, or Codex
+project-review service. A charge for access to such a service is a Core
+Charge. Free community hosting with optional sponsorship is not prohibited
+Replacement Hosting under this license.
+
+2. Grant
+
+Subject to this license, each Licensor grants You a worldwide,
+non-exclusive, royalty-free right to read, use, reproduce, modify, build,
+display, and distribute the Software and modifications in source and
+binary forms for the permitted uses in Section 3. These rights are not
+limited to non-business users.
+
+3. Permitted uses
+
+You may use and modify the Software for personal use and Internal Use,
+including paid employment and business work. You may publish community
+Forks, distribute the original or modified source and binaries free of
+Core Charges, and operate free community hosting. You may accept voluntary
+donations or sponsorship that do not condition access or features.
+
+You may charge independently for training, installation, configuration,
+support, data migration, maintenance, or consulting, provided customers
+can obtain and use the Software without buying those services. You may
+develop an integration for Your own Internal Use. Offering Software as a
+substantial part of a paid external product remains subject to Section 4.
+
+4. Restricted uses
+
+Without separate written permission from the relevant rights holders, You
+must not impose a Core Charge, resell or sublicense the Software as paid
+software, sell a modified edition or paid feature access, or offer paid
+Replacement Hosting. Repackaging the Software in a bundle, advertising a
+payment as support when it is required for software access, or making only
+a reduced edition free does not avoid this restriction.
+
+This restriction does not prohibit free community Forks that substitute
+for the official application, Internal Use, or the optional services and
+sponsorship expressly allowed in Section 3. Ordinary communication with
+an independent paid API does not itself turn Your private Internal Use
+into prohibited Replacement Hosting.
+
+5. Distribution conditions
+
+Every distribution of the Software or a modification must retain this
+license, applicable copyright and attribution notices, third-party
+notices, and a clear statement of material modifications. Modified
+distributions must identify their maintainer and distinguish themselves
+from the official ZZ Board project; factual attribution is permitted.
+
+You must license Your modifications to the Software under this same
+license when distributing them. You may not impose terms that remove
+recipients' rights granted by this license or bypass its restrictions.
+This condition does not relicense independent third-party components.
+
+When distributing a binary, You must provide its Corresponding Source
+under this same license, either alongside the binary or through a
+clearly identified, freely accessible link to the exact matching source.
+If You use a link, keep it available for at least as long as You make
+the binary available. A link to a moving branch or a different version
+does not satisfy this requirement. No source publication is required
+for modifications that are used only internally and not distributed.
+
+6. Contributions
+
+Unless explicitly agreed otherwise in writing, code intentionally
+submitted by its rights holder for inclusion in the Software is offered
+under this same license. Contributors retain their copyright. A
+contribution must not include material You lack authority to submit.
+No copyright assignment or automatic right to relicense a contribution
+under unrelated commercial terms is created by this section. Suggestions
+and ordinary feedback do not transfer ownership of users' content.
+
+7. Other rights
+
+This license grants no trademark rights or right to imply official
+endorsement. You may accurately describe a work as based on ZZ Board
+while clearly identifying a community modification. No patent license
+or rights in unrelated third-party material are granted by this text.
+
+There is no automatic conversion to MIT, Apache, or another license after
+a period of time. A future license for a later version does not revoke
+rights already effectively granted for an earlier version. This license
+also does not withdraw any prior effective MIT or other grant.
+
+8. Termination
+
+Your rights under this license terminate if You materially violate its
+conditions. They are reinstated if You cure the violation within 30 days
+after first receiving written notice from a Licensor, unless that
+Licensor has previously reinstated rights after a comparable violation.
+Termination of Your rights does not terminate compliant recipients'
+rights. Nothing in this license restricts uses allowed independently by
+applicable law or a separate effective license.
+
+9. No warranty and limitation of liability
+
+TO THE EXTENT PERMITTED BY APPLICABLE LAW, THE SOFTWARE IS PROVIDED "AS IS",
+WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING WARRANTIES
+OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND
+NON-INFRINGEMENT. YOU ARE RESPONSIBLE FOR ASSESSING SUITABILITY, BACKUPS,
+AND THE RISKS OF USE AND DISTRIBUTION.
+
+TO THE EXTENT PERMITTED BY APPLICABLE LAW, NO LICENSOR OR CONTRIBUTOR IS
+LIABLE FOR DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+CONSEQUENTIAL DAMAGES ARISING FROM THIS LICENSE OR USE OF THE SOFTWARE,
+INCLUDING LOSS OF DATA, PROFITS, OR BUSINESS, EVEN IF ADVISED OF THEIR
+POSSIBILITY. MANDATORY LEGAL RIGHTS AND LIABILITIES ARE NOT EXCLUDED.
+
+10. Interpretation
+
+This is a custom Source Available license, not an OSI-approved open-source
+license, and not FSL, MIT, Apache, PolyForm, or an alteration of a standard
+license under its name. If a provision is unenforceable, the remaining
+provisions remain effective to the extent permitted by law. Separate
+commercial rights require an express agreement with the relevant rights
+holders; no availability of such an agreement is promised.

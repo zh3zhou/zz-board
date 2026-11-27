@@ -1,0 +1,18 @@
+.wallpaper-scene, .wallpaper-ink { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.wallpaper-scene { overflow: hidden; container-type: size; }
+.wallpaper-layer { position: absolute; }
+.wallpaper-workspace, .wallpaper-settings .wallpaper-preview {
+  position: relative; overflow: hidden; width: 100%; aspect-ratio: var(--wallpaper-screen-ratio, 16 / 9);
+  border: 1px solid var(--hairline); border-radius: 9px; background: var(--skin-background, var(--paper));
+}
+.wallpaper-settings .wallpaper-preview { display: block; padding: 0; }
+.wallpaper-preview > span { position: absolute; right: 6px; bottom: 6px; padding: 3px 7px; border-radius: 5px; background: var(--panel-elevated, var(--panel)); color: var(--ink); font-size: 11px; }
+.wallpaper-workspace { touch-action: none; user-select: none; cursor: grab; }
+.wallpaper-workspace:active { cursor: grabbing; }
+.wallpaper-workspace[data-tool=draw] { cursor: crosshair; }
+.wallpaper-studio, .wallpaper-placement, .wallpaper-presets { display: grid; gap: 8px; }
+.wallpaper-tools, .wallpaper-brush, .wallpaper-image-picker { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; }
+.wallpaper-tools [aria-pressed=true] { outline: 1px solid var(--accent); color: var(--accent); }
+.wallpaper-brush label:first-child input { width: 40px; }
+.wallpaper-image-picker select { flex: 1; }
+.wallpaper-placement label { grid-template-columns: 95px 1fr; align-items: center; font-size: 11px; }

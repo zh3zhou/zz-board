@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#e8e2d4" />
+    <meta name="description" content="A quiet, local-first spatial companion for Codex tasks and notes." />
+    <title>ZZ Board</title>
+    <style>
+      #startup-shell { position: fixed; inset: 0; display: grid; place-content: center; padding: 2rem; text-align: center; background: #e8e2d4; color: #39433f; font: 15px/1.7 system-ui, sans-serif; }
+      #root:not(:empty) + #startup-shell { display: none; }
+      #startup-shell p { margin: .5rem auto; max-width: 38rem; overflow-wrap: anywhere; }
+      #startup-shell a { color: inherit; }
+      #startup-hint, #startup-recovery { visibility: hidden; animation: startup-visible 0s 2s forwards; }
+      #startup-recovery { animation-delay: 20s; }
+      #startup-shell[data-mounted] #startup-recovery, #startup-shell[data-failed] #startup-hint { display: none; }
+      #startup-shell[data-failed] #startup-recovery { visibility: visible; animation: none; }
+      @keyframes startup-visible { to { visibility: visible; } }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <main id="startup-shell" aria-label="打开看板">
+      <p id="startup-hint" role="status">正在打开看板…</p>
+      <div id="startup-recovery">
+        <p id="startup-message" role="status">界面仍未载入。</p>
+        <a href="/">重新加载</a>
+        <details><summary>帮助与诊断</summary>
+          <p>桌面版可以从系统托盘选择「重启本地服务」，再重新加载。</p>
+          <p id="startup-detail"></p>
+        </details>
+      </div>
+    </main>
+    <script type="module" src="/src/web/entry.ts"></script>
+  </body>
+</html>

@@ -9,11 +9,9 @@
 
 ![作者自用画布上的便签缩略图](docs/public-launch/assets/notes-thumbnail.png)
 
-![ZZ Board 的整张画布，展示虚构的春日书展和相连的图文便签](docs/public-launch/assets/board-synthetic.png)
+![ZZ Board 合成演示画布](docs/public-launch/assets/board-synthetic.png)
 
-*虚构的春日书展样例。*
-
-[在浏览器试用](https://zh3zhou.github.io/zz-board/)。打开一张合成书展画布，可以写便签、贴图、涂画和连线。改动保存在当前浏览器。
+图中数据是合成示例；不是外部用户案例。
 
 ## 从 Codex 项目找回上次做到哪
 
@@ -45,6 +43,27 @@
 
 *「灯下页边」的样板预览。左边可比较连线和优先级，右边可试读长文。*
 
-## 发布进度
+## 交给我的 Agent 部署
 
-当前公开的是项目展示页。Windows 源码、部署指南和 GitHub Issues 将随首发开放。
+在 Windows x64 上，把这个仓库下载或克隆到一个打算长期保留的文件夹。在 Codex 中把这个文件夹作为本地项目打开，使用其他本地编程 Agent 也可以。把下面这段话交给它。
+
+> 请把这个仓库作为我的 ZZ Board 项目，从源码构建并启动桌面版。如果这台电脑已经有看板，先找到原来的入口和数据，再接着使用。完成后，把能再次打开看板的入口和这个版本的作者介绍给我。以后我会回到这里，请你帮我做 Skin、改功能和维护它。
+
+Agent 从仓库的工程说明开始，检查 Node、pnpm、Git、Rust/MSVC 与 WebView2，按构建结果核对实际窗口和服务。机器缺少工具时，它会先说明需要安装什么。看板数据保存在本机，普通部署无需云账号。[部署与再次打开](docs/DEPLOYMENT_QUICKSTART.md) · [给 Agent 的入口](AGENTS.md)
+
+新建看板打开后直接进入「夜墨 3.0」画布。双击空白处写一张便签，或粘贴一张图。从托盘真正退出再打开，就能找回它。用左上菜单的「数据与帮助 → 使用指南」查操作。[三分钟试用](docs/USER_TRIAL.md) · [用户与 Agent 手册](docs/USER_AGENT_GUIDE.md)
+
+第一次接入时，先打开桌面，让部署 Agent 运行 `pnpm setup:windows -- -BindCodex` 关联本机看板。到「项目 → 项目更新 → 来源授权」分别开启本机读取与模型整理。空白看板可以展开「从 Codex 同步更多来源」，复制同步指令到 Codex，发送前指定要同步的项目。同步后，打开一个项目气泡试试「检查更新」。[连接 Codex 的步骤](docs/DEPLOYMENT_QUICKSTART.md#连接-codex-项目)
+
+## 下次在这个项目里继续
+
+- **做一套 Skin。** 告诉 Agent 想要的纸面、边框和配色，例如「做一套夜里读长便签的暖灰纸样，先给我看预览」。项目里的制作 Skill 和校验工具可以直接使用。[外观与源码定制](docs/AGENT_CUSTOMIZATION.md)
+- **维护和更新。** 让 Agent 先确认实际运行版本、数据目录和个人修改，备份后再更新。版本记录和工程导览随这份源码提供。[版本记录](CHANGELOG.md) · [工程导览](docs/ENGINEERING.md)
+
+## 版本与许可
+
+当前开放 **Windows x64 源码预览（0.11.0 / alpha.1）**，可按上面的指南自行构建。已完成自动检查、标准桌面构建与运行文件校验。这个候选的原生首用、中文输入与系统剪贴板、托盘退出重开和升级恢复仍待实测。
+
+应用里的「反馈与帮助」可以预览、复制或保存报告。选择对应的 GitHub 表单，检查要公开的内容，再在 GitHub 确认提交。[报告问题](https://github.com/zh3zhou/zz-board/issues/new?template=bug.yml) · [提出建议](https://github.com/zh3zhou/zz-board/issues/new?template=feature.yml) · [隐私说明](PRIVACY.md) · [反馈与贡献](CONTRIBUTING.md) · [安全报告](SECURITY.md)
+
+项目自有代码、文档及随附自有素材采用 **Source Available 1.0（源码可用）**，版权署名为李哲舟（Li Zhezhou）。允许个人和企业内部使用、免费社区 Fork、免费托管及独立收费的安装、培训和维护服务。核心软件收费分发与付费替代托管须另行授权。修改版分发须保留署名和相同许可。[项目许可](LICENSE) · [第三方材料](THIRD_PARTY_NOTICES.md)

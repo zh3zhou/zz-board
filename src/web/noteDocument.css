@@ -1,0 +1,24 @@
+.note-document { display: flow-root; width:100%; white-space: pre-wrap; overflow-wrap: anywhere; text-align: left; }
+.note-editor-host { width: 100%; height: 100%; overflow: auto; color: var(--note-skin-text); font: 400 13px/1.62 'Noto Serif SC',serif; }
+.note-rich-editor { min-height: 70px; white-space: pre-wrap; outline: none; caret-color: var(--note-skin-accent); }
+.note-rich-editor > .note-document { position: relative; }
+.note-rich-editor::selection, .note-rich-editor *::selection { color: var(--note-skin-text); background: color-mix(in srgb,var(--note-skin-accent) 30%,transparent); }
+.note-image { position: relative; display: block; margin: 4px 6px 8px; vertical-align: top; min-height: 20px; }
+.note-image img { display: block; width: 100%; height: auto; object-fit: contain; border-radius: 3px; }
+.note-image-controls, .note-image-resize { display: none; position: absolute; z-index: 4; }
+.note-image-controls { left: 0; top: 0; width: max-content; box-sizing: border-box; flex-wrap: wrap; padding: 2px; background: var(--chrome-surface, var(--panel)); border: 1px solid var(--hairline); border-radius: 5px; gap: 2px; white-space: nowrap; }
+.note-image-controls button, .note-image-resize { font: 12px sans-serif; padding: 1px 4px; color: var(--ink); background: var(--panel); }
+.note-image.is-selected { outline: 1px solid var(--accent); }
+.note-image.is-selected .note-image-controls { display: flex; }
+.note-image.is-selected .note-image-resize { display: block; right: 0; bottom: 0; cursor: nwse-resize; }
+.note-image.legacy-right .note-image-resize { right: auto; left: 0; cursor: nesw-resize; }
+.note-image-move, .note-image.is-selected img { cursor: grab; touch-action: none; }
+.note-image-resize { touch-action: none; }
+.note-image-drag-preview { position: fixed; z-index: 3100; pointer-events: none; opacity: .65; border-radius: 3px; outline: 1px dashed var(--accent); }
+.bubble.bubble-image .bubble-surface { padding: 0; border: 0; border-radius: 4px; background: transparent; background-image: none; opacity: 1; transform: none; }
+.bubble.bubble-image:hover .bubble-surface { transform: none; }
+.bubble-image .bubble-surface > img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.bubble-image .bubble-surface::before, .bubble-image .bubble-surface::after { display: none; }
+.image-viewer { position: fixed; inset: 0; z-index: 3000; background: #121212eb; display: flex; align-items: center; justify-content: center; padding: 40px; }
+.image-viewer > img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.image-viewer .panel-close { position: fixed; right: 18px; top: 18px; }

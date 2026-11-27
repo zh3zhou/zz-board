@@ -1,0 +1,6 @@
+interface:
+  display_name: "把 Codex 对话记到 ZZ Board"
+  short_description: "提炼本次讨论的结论或待办，保存为关联当前项目与来源对话的 ZZ Board 便签"
+  default_prompt: "使用 $save-zz-board-note，把刚才讨论的决定和下一步总结成当前项目的 ZZ Board 便签。"
+policy:
+  allow_implicit_invocation: true

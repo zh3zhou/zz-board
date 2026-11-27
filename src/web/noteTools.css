@@ -1,0 +1,58 @@
+.note-tools { position: absolute; z-index: 9; bottom: calc(100% - 3px); right: 4px; display: grid; justify-items: end; gap: 2px; padding: 3px; border-radius: 9px; border: 1px solid var(--hairline); background: var(--control-bg); color: var(--control-text); opacity: 0; pointer-events: none; transition: opacity .15s; }
+.note-tool-row { display: flex; gap: 2px; align-items: center; }
+.bubble:hover .note-tools, .bubble.is-selected .note-tools, .bubble:focus-within .note-tools { opacity: 1; pointer-events: auto; }
+.note-tools button { display: grid; place-items: center; width: 27px; height: 25px; min-height: 0; padding: 3px; background: transparent; color: inherit; border: 0; border-radius: 5px; }
+.note-tools button:hover { background: var(--accent-soft); }
+.note-tools button:disabled { color: var(--control-muted); cursor: not-allowed; }
+.note-tools .note-archive-action { width: auto; padding-inline: 6px; white-space: nowrap; font-size: 12px; }
+.priority-glyph { width: 22px; height: 22px; display: block; object-fit: contain; }
+.bubble-priority-badge .priority-glyph { width: 21px; height: 21px; }
+.note-tools .priority-glyph { margin-top: -1px; }
+.priority-icon-settings > div[role=group] { display: flex; gap: 6px; flex-wrap: wrap; margin: 8px 0; }
+.priority-icon-settings > div[role=group] button { display: flex; align-items: center; gap: 4px; border: 1px solid var(--control-border); }
+.priority-icon-settings button[aria-pressed=true] { border-color: var(--accent); background: var(--accent-soft); }
+.priority-icon-settings button span { display: inline-flex; }
+.priority-custom-inputs { display: grid; gap: 6px; margin: 8px 0; }
+.priority-custom-inputs label { display: flex; gap: 6px; align-items: center; }
+.priority-custom-inputs img { width: 26px; height: 26px; object-fit: contain; }
+.priority-custom-inputs input { min-width: 0; max-width: 72%; }
+.note-detail-actions { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0; }
+.expanded-note-export .note-copy { height: auto; max-height: none; overflow: visible; font: 400 17px/1.8 'Noto Serif SC', serif; }
+.expanded-note-export > h2 { margin: 0 0 12px; font: 600 18px/1.45 'Noto Serif SC', serif; text-align: left; overflow-wrap: anywhere; }
+.expanded-note-export > img { width: 100%; height: auto; display: block; }
+.folded-note-section .relation-row p { flex: 1; white-space: pre-wrap; overflow-wrap: anywhere; }
+.selection-outline { position: absolute; border: 1px solid var(--accent); pointer-events: none; z-index: 100; }
+.selection-actions { position: absolute; bottom: calc(100% + 8px); left: 0; display: flex; gap: 4px; transform-origin: bottom left; white-space: nowrap; pointer-events: auto; background: var(--control-bg); color: var(--control-text); border: 1px solid var(--hairline); border-radius: 8px; padding: 3px; }
+.selection-actions button { min-height: 26px; padding: 3px 8px; font-size: 12px; background: transparent; color: inherit; }
+.selection-actions button:first-child { cursor: move; touch-action: none; }
+.selection-scale-handle { position: absolute; width: 11px; height: 11px; padding: 0; border: 1px solid var(--accent); border-radius: 3px; background: var(--panel-elevated, var(--paper)); pointer-events: auto; touch-action: none; transform-origin: center; }
+.selection-scale-handle.nw { left:0; top:0; cursor:nwse-resize; }.selection-scale-handle.ne { left:100%; top:0; cursor:nesw-resize; }.selection-scale-handle.sw { left:0; top:100%; cursor:nesw-resize; }.selection-scale-handle.se { left:100%; top:100%; cursor:nwse-resize; }
+.selection-scale-handle:hover,.selection-scale-handle:focus-visible { background:var(--accent); outline:2px solid var(--panel); outline-offset:1px; }
+.selection-scale-value { align-self:center; font-size:12px; padding:0 6px; font-variant-numeric:tabular-nums; }
+.note-recovery-list textarea { width: 100%; min-height: 100px; white-space: pre-wrap; }
+.recovery-actions { display: flex; flex-wrap: wrap; gap: 6px; }
+.bubble.is-folding, .bubble.is-unfolding { pointer-events: none; }
+.bubble.is-folding .bubble-drift, .bubble.is-unfolding .bubble-drift { animation: none; }
+.note-save-status { display: block; margin: 8px 0; color: var(--muted); }
+.relation-row { display: flex; align-items: center; border-bottom: 1px solid var(--hairline); }
+.relation-row > button:first-child { flex: 1; text-align: left; overflow-wrap: anywhere; }
+.relation-row.is-selected { background: var(--accent-soft); }
+.relation-delete { flex: 0 0 28px; padding: 3px; }
+@media (prefers-reduced-motion: reduce) { .bubble.is-folding, .bubble.is-unfolding { animation-duration: 1ms; } .note-tools { transition: none; } }
+.note-scroll-viewport { position: relative; width: 100%; height: 100%; min-width: 0; overflow: hidden; scrollbar-width: none; overscroll-behavior: contain; }
+.note-scroll-viewport.is-scrollable { overflow-y: auto; }
+.note-scroll-viewport::-webkit-scrollbar { display: none; }
+.note-scroll-content { display: flow-root; }
+.note-scroll-content :is(.note-copy, .note-editor-host) { height: auto; max-height: none; overflow: visible; }
+.note-scroll-content .note-rich-editor { min-height: 1.62em; overflow-wrap: anywhere; }
+.note-scroll-rail {
+  --rail-scale: calc(var(--priority-scale, 1) / var(--content-scale, 1));
+  position: absolute; z-index: 6; top: 12%; bottom: 12%; left: calc(100% + 4px * var(--rail-scale));
+  width: calc(14px * var(--rail-scale)); touch-action: none; cursor: default;
+}
+.note-scroll-rail::before, .note-scroll-rail > span {
+  position: absolute; left: 0; width: calc(3px * var(--rail-scale)); border-radius: 99px;
+}
+.note-scroll-rail::before { content: ''; inset-block: 0; background: color-mix(in srgb, var(--note-skin-accent) 18%, transparent); }
+.note-scroll-rail > span { background: var(--note-skin-accent); }
+.note-scroll-rail:focus-visible { outline: 1px solid var(--note-skin-accent); outline-offset: 2px; border-radius: 4px; }

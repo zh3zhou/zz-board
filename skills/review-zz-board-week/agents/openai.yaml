@@ -1,0 +1,6 @@
+interface:
+  display_name: "回顾 ZZ Board 的一周"
+  short_description: "回顾各项目已记录的成果、决定和讨论，单独生成有出处的一周小结"
+  default_prompt: "使用 $review-zz-board-week 看看上周各个项目有什么值得记住的进展，标清时间与资料缺口。"
+policy:
+  allow_implicit_invocation: true

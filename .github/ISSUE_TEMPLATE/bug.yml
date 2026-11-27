@@ -1,0 +1,14 @@
+name: 问题反馈
+description: 记录可以公开的问题与复现步骤。
+title: "[Bug] "
+body:
+  - type: markdown
+    attributes:
+      value: "Issue 将公开显示。请删去联系方式、真实便签、对话、个人路径、凭证及私人诊断材料。安全问题请按 SECURITY.md 选择私密渠道。"
+  - type: textarea
+    id: report
+    attributes:
+      label: 公开报告
+      description: "粘贴应用里已检查的「公开报告」，或直接写下版本、操作步骤、实际表现、预期结果和影响。"
+    validations:
+      required: true

@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "repository": "zh3zhou/zz-board",
+  "channel": "alpha.1",
+  "feedbackChannel": "github-issues",
+  "windowsBinaryDistributionApproved": false,
+  "licenseApproved": true,
+  "copyrightOwnershipConfirmed": true,
+  "thirdPartyObligationsReviewed": true,
+  "githubIssueFormsVerified": false,
+  "githubFeedbackPrivacyVerified": true,
+  "privacyDeploymentVerified": false,
+  "cloudReceiptVerified": false,
+  "cloudDeletionVerified": false,
+  "cloudPrivacyRetentionVerified": false,
+  "syntheticScreenshotReviewed": true,
+  "firstRunVerified": false,
+  "nativeWindowsAcceptanceVerified": false,
+  "cleanPublicBuildVerified": true,
+  "exactPublicCommit": null,
+  "notes": "The first public deliverable is source. Keep exactPublicCommit null in tracked source and supply the actual SHA with --public-commit or ZZ_BOARD_SOURCE_COMMIT after commit. Use evidence from the corresponding repository, source and build for each verified gate. Review third-party obligations for the distributed files and check Windows IME, reopen, update and complete backup restore. For github-issues, verify that Issues is enabled on the target repository, both issue forms can be opened, and the shipped workflow keeps reports local until the user chooses what to share publicly. Check the public privacy notice and issue instructions. For cloudbase, verify deployment privacy, receipts, deletion, cleanup and platform log and backup retention. Earlier schema-v1 records without feedbackChannel use the CloudBase gates."
+}

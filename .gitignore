@@ -1,0 +1,21 @@
+node_modules/
+dist/
+coverage/
+playwright-report/
+test-results/
+.local-data/
+.tmp/
+exports/
+artifacts/
+*.sqlite
+*.sqlite-*
+.env
+.env.local
+.env.*
+!.env.example
+*.log
+.DS_Store
+Thumbs.db
+
+# Local verified Harness rollback snapshots
+.harness-backups/

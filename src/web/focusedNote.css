@@ -1,0 +1,51 @@
+.focused-note {
+  position: fixed; inset: 0; z-index: 60; display: flex;
+  isolation: isolate; outline: none;
+}
+.focused-note-backdrop {
+  position: absolute; inset: 0; z-index: -1;
+  background: rgba(20, 22, 23, .17); backdrop-filter: blur(2px);
+}
+.focused-note-space { position: relative; flex: 1; min-width: 0; min-height: 0; pointer-events: none; }
+.focused-note-position {
+  --note-gutter: min(16px, 3vw, 3vh);
+  --note-width: min(700px, calc(100% - 2 * var(--note-gutter)));
+  --note-height: min(700px, 78%, calc(100% - 56px - 2 * var(--note-gutter)));
+  position: absolute; width: var(--note-width);
+  max-height: var(--note-height);
+  left: clamp(calc(var(--note-width) / 2 + var(--note-gutter)), calc(34% + var(--note-anchor-x)), calc(100% - var(--note-width) / 2 - var(--note-gutter)));
+  top: clamp(calc(var(--note-height) / 2 + var(--note-gutter) + 42px), calc(34% + var(--note-anchor-y)), calc(100% - var(--note-height) / 2 - var(--note-gutter)));
+  transform: translate(-50%, -50%); display: flex; pointer-events: auto;
+}
+.focused-note-paper {
+  display: flex; flex-direction: column; width: 100%; min-height: 0; overflow: hidden;
+  color: var(--note-skin-text); background: var(--paper);
+  background-image: var(--note-reading-texture, none), var(--note-skin-material-image, none), linear-gradient(var(--note-skin-fill), var(--note-skin-fill));
+  background-size: cover, auto, auto; background-position: center;
+  border: 1px solid var(--note-skin-border); border-radius: var(--note-reading-radius, 14px); box-shadow: 0 14px 52px rgba(20, 22, 23, .23);
+}
+.focused-note-paper h2 { margin: 12px clamp(16px, 3vw, 34px) 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: inherit; font-size: 15px; }
+.focused-note-tools { position: absolute; right: 1px; bottom: calc(100% + 6px); display: flex; gap: 3px; padding: 3px; border: 1px solid var(--control-border); border-radius: 12px; color: var(--control-text); background: var(--control-bg); box-shadow: 0 3px 12px #0002; }
+.focused-note-tools button { display: grid; place-items: center; width: 31px; height: 31px; padding: 3px; border: 0; border-radius: 8px; background: transparent; color: inherit; }
+.focused-note-tools button:hover, .focused-note-tools button[aria-expanded=true] { background: var(--control-hover); color: var(--control-hover-text); }
+.focused-note-body { min-height: 0; overflow: auto; overscroll-behavior: contain; padding: 12px clamp(16px, 3vw, 34px) 24px; scrollbar-width: thin; }
+.focused-note-body .note-editor-host, .focused-note-body .note-copy { height: auto; max-height: none; overflow: visible; font: 400 17px/1.8 'Noto Serif SC', serif; }
+.focused-note-body .note-rich-editor { min-height: min(20vh, 160px); }
+.focused-note-body > img { display: block; width: 100%; max-height: 50vh; object-fit: contain; }
+.focused-note-status { flex: none; padding: 4px 16px 10px; color: inherit; font-size: 12px; }
+.note-schedule { padding: 10px 16px 16px; overflow: auto; }
+.note-schedule fieldset { display: grid; justify-items: start; gap: 10px; margin: 0; padding: 0; border: 0; }
+.note-schedule label, .note-schedule-days, .note-schedule-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 7px; }
+.note-schedule label { font-size: 14px; }
+.note-schedule input[type='number'] { width: 5em; }
+.note-schedule button, .note-schedule select, .note-schedule input:not([type='checkbox']) { padding: 4px 8px; border: 1px solid var(--control-border); border-radius: 6px; background: var(--control-bg); color: var(--control-text); }
+.note-schedule p { margin: 0; font-size: 13px; }
+.focused-note-details { position: relative; flex: 0 0 min(350px, 42vw); min-height: 0; }
+.focused-note-details .detail-panel { position: absolute; inset: 0; width: 100%; height: 100%; }
+@media (max-width: 720px) {
+  .focused-note { flex-direction: column; }
+  .focused-note-details { flex: 0 0 min(42dvh, 340px); }
+}
+@media (prefers-reduced-transparency: reduce) {
+  .focused-note-backdrop { backdrop-filter: none; }
+}

@@ -1,0 +1,5 @@
+/target/
+/gen/
+/icons/icon.ico
+/resources/runtime/*
+!/resources/runtime/.gitkeep

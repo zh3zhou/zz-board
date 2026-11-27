@@ -1,0 +1,32 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "ZZ Board",
+  "version": "0.11.0",
+  "identifier": "com.zzboard.desktop",
+  "build": {
+    "beforeDevCommand": "pnpm build && node scripts/build-desktop-sidecar.mjs",
+    "beforeBuildCommand": "pnpm build && node scripts/build-desktop-sidecar.mjs",
+    "frontendDist": "../dist/web"
+  },
+  "app": {
+    "windows": [],
+    "security": {
+      "csp": "default-src 'self'; connect-src 'self' http://127.0.0.1:4318; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; script-src 'self'; font-src 'self'; object-src 'none'; frame-src 'none'; base-uri 'none'; form-action 'none'"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["nsis"],
+    "icon": ["icons/icon.ico"],
+    "useLocalToolsDir": true,
+    "resources": ["resources/runtime/**/*"],
+    "windows": {
+      "nsis": {
+        "installMode": "currentUser",
+        "installerHooks": "windows-upgrade.nsh",
+        "languages": ["English"],
+        "customLanguageFiles": { "English": "nsis/English.nsh" }
+      }
+    }
+  }
+}

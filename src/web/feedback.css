@@ -1,0 +1,23 @@
+.feedback-panel { position: fixed; z-index: 120; inset: 20px auto 20px 20px; width: min(620px, calc(100vw - 40px)); display: flex; flex-direction: column; color: var(--control-text, var(--ink)); background: var(--panel-elevated, var(--panel)); border: 1px solid var(--control-border, var(--hairline)); border-radius: var(--chrome-radius, 12px); box-shadow: var(--shadow); }
+.feedback-panel .panel-fixed-header { position: relative; flex: 0 0 auto; padding: 20px 52px 12px 20px; }
+.feedback-panel .panel-scroll { min-height: 0; flex: 1; overflow: auto; padding: 0 20px 24px; overscroll-behavior: contain; }
+.feedback-body p { line-height: 1.65; }
+.feedback-form { display: grid; gap: 14px; border: 0; padding: 0; margin: 0; min-width: 0; }
+.feedback-form label { display: grid; gap: 6px; font-size: 14px; }
+.feedback-form textarea, .feedback-form input[type=text], .feedback-form select, .feedback-credential textarea { width: 100%; box-sizing: border-box; padding: 9px 11px; color: var(--control-text); background: var(--control-bg); border: 1px solid var(--control-border); border-radius: 6px; font: inherit; }
+.feedback-form textarea { resize: vertical; min-height: 72px; }
+.feedback-form label.feedback-opt-in { display: flex; align-items: center; gap: 8px; }
+.feedback-form small, .feedback-panel small { display: block; line-height: 1.55; color: var(--control-muted, var(--muted)); overflow-wrap: anywhere; }
+.feedback-actions { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0; }
+.feedback-panel button { min-height: 34px; }
+.feedback-panel pre { white-space: pre-wrap; overflow-wrap: anywhere; max-height: 340px; overflow: auto; font-size: 12px; line-height: 1.6; padding: 12px; border: 1px solid var(--control-border); border-radius: 6px; color: var(--control-text); background: var(--control-bg); user-select: text; }
+.feedback-privacy, .feedback-storage { font-size: 12px; color: var(--control-muted, var(--muted)); }
+.feedback-notice { padding: 10px 12px; border: 1px solid var(--control-border); border-radius: 6px; }
+.feedback-receipts { border-top: 1px solid var(--control-border); margin-top: 24px; padding-top: 12px; }
+.feedback-receipts article { padding: 12px 0; border-bottom: 1px solid var(--hairline); }
+.feedback-receipts strong { font-size: 14px; }
+.feedback-receipts p { font-size: 12px; }
+.feedback-delete-confirm { padding: 10px; border: 1px solid var(--danger); border-radius: 6px; }
+.feedback-delete-confirm button { margin-right: 8px; }
+.feedback-panel :focus-visible { outline: 2px solid var(--control-focus, var(--accent)); outline-offset: 2px; }
+@media (max-width: 600px) { .feedback-panel { inset: 8px; width: auto; } .feedback-panel .panel-scroll { padding: 0 14px 18px; } }

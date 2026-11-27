@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "generator": {
+    "name": "agent-ready",
+    "version": "0.5.0",
+    "command": "agent-ready generate"
+  },
+  "date": "2026-11-27",
+  "templates": {
+    "agent.project.public.yaml": "6f02f0d7f76e3a8aa462edbdf9b6e80b92c1d61846cf6f1172ec31c3fc4ab031",
+    "AGENTS.public.md": "2287309444c0d9efcab81d23b667d271baee5b678f8742462ce1889a4420ae8d"
+  },
+  "files": {
+    "commands.md": "ba3def8bb8ca425bd9b5682b6da4d68d1ab3adeff653432bf308d923920a9018",
+    "project-map.md": "c149f5046005c739289490183ab602dd9922ae5701de275253331db9061653cf",
+    "safety.md": "170b4db3de4a536a6386ce0bda982b8d03aa9f276c00c561bb748df287e4f523",
+    "validation.md": "2dcd268fb7a3a192b0e04ac97826648697f644045516da0a23ab9d3246881f6e",
+    "known-failures.md": "0f6dba2b43637abb961f9ff6f91906c5c38c61d73da5a921075ed7b94009ebdd"
+  },
+  "checks": {
+    "preflight": [
+      "scan --json",
+      "direct root probe",
+      "lint --json",
+      "doctor --json",
+      "optimize --plan --json"
+    ],
+    "postflight": [
+      "lint --json: zero diagnostics",
+      "verify --dry-run --json: command plan valid; commands not executed",
+      "check --json: zero diagnostics; adapters current"
+    ],
+    "userOwnedAgentsPreserved": true,
+    "applicationTestsExecutedByAgentReady": false,
+    "remoteCiVerified": false
+  },
+  "note": "Generated in an isolated public source candidate. Never copied from the private project's docs/agent. Hashes use UTF-8 LF bytes; changed templates require isolated regeneration and review."
+}

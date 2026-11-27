@@ -1,0 +1,40 @@
+.zz-export-scene { isolation: isolate; }
+.zz-export-scene *, .zz-export-scene *::before, .zz-export-scene *::after { animation: none !important; transition: none !important; }
+.zz-export-scene .bubble-drift, .zz-export-scene .bubble-surface { transform: none !important; }
+.zz-export-scene .bubble { width:100%; height:100%; }
+.export-background { position:absolute; }
+.export-selector { position:absolute; inset:0; z-index:80; cursor:crosshair; touch-action:none; overflow:hidden; }
+.export-rectangle { position:absolute; border:1px solid var(--accent); box-shadow:0 0 0 99999px #0005; cursor:move; }
+.export-corner { position:absolute; width:13px; height:13px; background:var(--paper); border:2px solid var(--accent); border-radius:3px; }
+.export-corner.nw { left:-7px; top:-7px; cursor:nwse-resize; }.export-corner.ne { right:-7px; top:-7px; cursor:nesw-resize; }.export-corner.sw { left:-7px; bottom:-7px; cursor:nesw-resize; }.export-corner.se { right:-7px; bottom:-7px; cursor:nwse-resize; }
+.export-toolbar { position:absolute; bottom:70px; left:18px; z-index:85; width:292px; max-width:calc(100% - 36px); max-height:calc(100% - 96px); overflow:auto; display:grid; gap:12px; padding:16px; border:1px solid var(--hairline); border-radius:16px; color:var(--ink); background:var(--panel-elevated,var(--paper)); box-shadow:var(--shadow); font-size:13px; }
+.export-toolbar header,.export-quality { display:flex; align-items:center; justify-content:space-between; gap:12px; }
+.export-toolbar header strong { font-size:15px; font-weight:600; }.export-help { margin:0; font-size:12px; line-height:1.7; color:var(--muted); }
+.export-toolbar button,.export-preview button { color:var(--control-text); background:var(--control-bg); border:1px solid var(--control-border); border-radius:8px; padding:8px 12px; font-size:13px; line-height:1.25; }
+.export-toolbar button:hover:not(:disabled),.export-preview button:hover:not(:disabled) { color:var(--control-hover-text); background:var(--control-hover); border-color:var(--control-focus); }
+.export-toolbar button:focus-visible,.export-preview button:focus-visible { outline:2px solid var(--control-focus); outline-offset:3px; }
+.export-toolbar button:disabled { opacity:1; color:var(--control-muted); background:var(--control-bg); border-color:var(--control-border); cursor:not-allowed; }
+.export-toolbar .export-close { padding:2px; width:26px; height:26px; font-size:20px; border:0; background:transparent; color:var(--muted); }
+.export-scale-options { display:flex; gap:3px; padding:3px; border:1px solid var(--hairline); border-radius:10px; background:var(--panel); }
+.export-scale-options button { border-color:transparent; background:transparent; padding:5px 10px; }
+.export-scale-options button[aria-pressed='true'] { color:var(--control-hover-text); background:var(--control-hover); border-color:var(--control-focus); }
+.export-dimensions { text-align:center; padding:10px 0; border-block:1px solid var(--hairline); font-size:13px; font-variant-numeric:tabular-nums; }
+.export-toolbar .export-primary { color:var(--control-hover-text); background:var(--control-hover); font-weight:600; }
+.export-toolbar small { font-size:12px; line-height:1.6; color:var(--muted); overflow-wrap:anywhere; }.export-toolbar small button { margin-left:8px; }
+.zz-tool-palette.is-export-tool { z-index:86; background:var(--panel-elevated,var(--paper)); }.is-export-tool > span { padding:0 8px; font-size:12px; }
+.export-preview { z-index:500; }.export-preview .modal { width:min(90vw,1000px); max-height:90vh; }.export-preview img { display:block; max-width:100%; height:auto; margin:auto; }.export-preview footer { display:flex; flex-wrap:wrap; gap:12px; padding:16px; }
+.export-preview .export-actual-pixels { overflow:auto; }
+.export-preview .export-actual-pixels img { max-width:none; max-height:none; margin:0; }
+.image-paste-retry { position:absolute; z-index:60; bottom:22px; left:50%; transform:translateX(-50%); }
+.is-exporting > .detail-panel, .is-exporting > .zen-handle, .is-exporting > .control-drawer, .is-exporting > .modal-backdrop, .is-exporting .notice, .is-exporting .link-source-hint, .is-exporting .multi-selection-count, .is-exporting .bubble-hover-preview { visibility:hidden; pointer-events:none; }
+.panel-scroll > .note-editor-host { height:auto; min-height:200px; padding:12px; border:1px solid var(--hairline); border-radius:12px; background:var(--note-skin-fill); }
+.panel-scroll .note-document { color:var(--note-skin-text); }
+.image-export-receipt { flex-basis: 100%; min-width: 0; color: var(--ink); font-size: 12px; }
+.image-export-receipt p { margin: 0 0 6px; }
+.image-export-receipt small { display: block; overflow-wrap: anywhere; }
+.image-export-receipt .export-path { display: block; width: 100%; text-align: left; white-space: normal; overflow-wrap: anywhere; user-select: text; margin: 4px 0; }
+.image-export-notice.notice { border-radius: 14px; z-index: 25; padding-right: 36px; }
+.export-receipt-close { position: absolute; right: 7px; top: 7px; }
+.image-export-settings label { display: grid; gap: 6px; margin: 12px 0; }
+.image-export-settings input { width: 100%; min-width: 0; }
+.image-export-settings > div { display: flex; gap: 8px; margin-top: 10px; }

@@ -1,0 +1,14 @@
+name: 使用建议
+description: 说明你的目标、当前体验与希望发生的变化。
+title: "[Idea] "
+body:
+  - type: markdown
+    attributes:
+      value: "Issue 将公开显示。请删去联系方式、真实便签、对话、个人路径、凭证及私人诊断材料。安全问题请按 SECURITY.md 选择私密渠道。"
+  - type: textarea
+    id: report
+    attributes:
+      label: 公开报告
+      description: "粘贴应用里已检查的「公开报告」，或直接描述你想完成什么、遇到的阻碍和期望的结果。"
+    validations:
+      required: true

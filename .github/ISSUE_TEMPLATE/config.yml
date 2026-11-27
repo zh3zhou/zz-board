@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 安全报告路径
+    url: https://github.com/zh3zhou/zz-board/blob/main/SECURITY.md
+    about: 私密漏洞入口启用后才可使用；不要公开利用步骤或密钥。

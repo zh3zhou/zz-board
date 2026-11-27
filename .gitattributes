@@ -1,0 +1,7 @@
+* text=auto eol=lf
+*.ps1 text eol=crlf
+*.cmd text eol=crlf
+
+# Preserve the verified bytes of upstream notices and source evidence.
+docs/public-launch/licenses/** -text !eol
+docs/public-launch/third-party-source-evidence/** -text !eol

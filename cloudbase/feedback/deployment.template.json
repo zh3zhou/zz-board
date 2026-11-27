@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "region": "ap-shanghai",
+  "entrypoint": "tcbopenapi",
+  "httpApiPath": "/v1/functions/zzb-feedback?webfn=true",
+  "httpFunction": {
+    "name": "zzb-feedback",
+    "type": "HTTP",
+    "runtime": "Nodejs24.11",
+    "timeout": 20,
+    "installDependency": false,
+    "envVariables": { "ZZB_FEEDBACK_ENABLED": "false" }
+  },
+  "cleanupFunction": {
+    "name": "zzb-feedback-cleanup",
+    "type": "Event",
+    "runtime": "Nodejs24.11",
+    "handler": "index.main",
+    "timeout": 20,
+    "installDependency": false,
+    "envVariables": {},
+    "triggers": []
+  },
+  "postAcceptanceTimer": { "name": "zzb-feedback-daily-cleanup", "type": "timer", "config": "0 0 2 * * * *" },
+  "migration": { "version": "20261011050000", "name": "zzb_feedback", "file": "cloudbase/migrations/20261011050000_zzb_feedback.sql" },
+  "followUpMigrations": [
+    { "version": "20261127060000", "name": "zzb_feedback_processing", "file": "cloudbase/migrations/20261127060000_zzb_feedback_processing.sql" },
+    { "version": "20261127070000", "name": "zzb_feedback_scoped", "file": "cloudbase/migrations/20261127070000_zzb_feedback_scoped.sql" }
+  ],
+  "credentialEnvNames": ["ZZB_FEEDBACK_PG_HOST", "ZZB_FEEDBACK_PG_PORT", "ZZB_FEEDBACK_PG_DATABASE", "ZZB_FEEDBACK_PG_USER", "ZZB_FEEDBACK_PG_PASSWORD"],
+  "optionalCredentialEnvNames": ["ZZB_FEEDBACK_PG_CA"],
+  "serverCredentialScope": "Use distinct private database logins for intake and retention. Each inherits its one feedback group and can only execute its assigned operations.",
+  "rateLimit": { "scope": "global", "perActionPerMinute": 30, "newReportsPerUtcDay": 500, "withdrawalsPerUtcDay": 500, "duplicateSubmissionsConsumeDailyReportBudget": false, "sourceIpHash": false },
+  "gates": ["existing-package-no-new-charges", "new-prefix-collision-free", "existing-policy-preserved-without-OPA-migration", "cleanup-denied-to-public-clients", "verified-private-network-and-TLS", "restricted-intake-and-retention-logins-tested-separately", "log-and-backup-retention-disclosed", "publishable-key-webfn-synthetic-acceptance", "concurrent-submit-delete-and-quota-acceptance"]
+}
