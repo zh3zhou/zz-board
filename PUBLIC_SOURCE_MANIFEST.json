@@ -4,7 +4,7 @@
   "channel": "alpha.1",
   "date": "2026-11-28",
   "exactPublicCommit": null,
-  "sourceDigest": "8ec8a2d487d1d268dfeef3c8521655170cf3641dcb8eff64793049c3cc73763b",
+  "sourceDigest": "83514d6b6b956e30beac65e4ffec824255c865e5f1cec7c1bf42f9acc8ff6243",
   "publicationReady": false,
   "blockers": [
     "firstRunVerified",
@@ -67,8 +67,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 3052,
-      "sha256": "9d8f5c8c322526c82c49e9a180e54eee72f5ba02b76aac37819da24c6841b86f"
+      "bytes": 3085,
+      "sha256": "371a8a9d307f8d9a48cf388ed63c1fff4801894d92c72cac73f7c939ee631f32"
     },
     {
       "path": "CONTRIBUTING.md",
@@ -262,8 +262,8 @@
     },
     {
       "path": "docs/public-launch/CHANGELOG.public.md",
-      "bytes": 3067,
-      "sha256": "ab701768b43caaf573895b0262cffb84b5c9b7413228b384ff583b4af93bac2c"
+      "bytes": 3100,
+      "sha256": "404a2aa7fc2b1c3d90ba562be041ce1eb56b6305b169c01b3809506d9c9622fb"
     },
     {
       "path": "docs/public-launch/ENGINEERING.public.md",
